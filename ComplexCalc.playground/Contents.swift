@@ -28,6 +28,84 @@ print("Welcome back to the UW Calculator")
 //: IMPORTANT: If any tests are commented out, you will be graded a zero (0)! You should never be in the habit of eliminating tests to make the code pass.
 //:
 class Calculator {
+    
+    func add (lhs: Int, rhs: Int) -> Int{
+        return lhs + rhs
+    }
+    
+    func add (_ array: [Int]) -> Int{
+        return array.reduce(0, +)
+    }
+    
+    func add (lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int){
+        return (lhs.0 + rhs.0, lhs.1 + rhs.1)
+    }
+    
+    func add (lhs: [String:Int], rhs: [String:Int]) -> [String:Int]{
+        
+        let xTotal = lhs["x"]! + rhs["x"]!
+        let yTotal = lhs["y"]! + rhs["y"]!
+        
+        return ["x": xTotal, "y": yTotal]
+    }
+    
+    
+    
+    
+    
+    func subtract (lhs: Int, rhs: Int) -> Int{
+        return lhs - rhs
+    }
+    
+    func subtract (lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int){
+        return (lhs.0 - rhs.0, lhs.1 - rhs.1)
+    }
+    
+    func subtract (lhs: [String:Int], rhs: [String:Int]) -> [String:Int]{
+        
+        let xTotal = lhs["x"]! - rhs["x"]!
+        let yTotal = lhs["y"]! - rhs["y"]!
+        
+        return ["x": xTotal, "y": yTotal]
+    }
+    
+    
+    
+    
+    func multiply (lhs: Int, rhs: Int) -> Int{
+        return lhs * rhs
+    }
+    
+    func multiply (_ array: [Int]) -> Int{
+        return array.reduce(0, *)
+    }
+    
+    
+    
+    
+    
+    func divide (lhs: Int, rhs: Int) -> Int{
+        return lhs / rhs
+    }
+    
+    
+    
+    
+    func count (_ array: [Int]) -> Int{
+        return array.count
+    }
+    
+    
+    
+    func avg (_ array: [Int]) -> Int{
+        let total = array.reduce(0, +)
+        return total / array.count
+    }
+    
+    
+    func mathOp(_ op: (Int, Int) -> Int, _ a: Int, _ b: Int) -> Int {
+        return op(a, b)
+    }
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
