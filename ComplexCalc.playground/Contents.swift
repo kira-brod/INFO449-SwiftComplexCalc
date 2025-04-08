@@ -98,8 +98,14 @@ class Calculator {
     
     
     func avg (_ array: [Int]) -> Int{
-        let total = array.reduce(0, +)
-        return total / array.count
+        
+        if array.count > 0 {
+            let total = array.reduce(0, +)
+            return total / array.count
+        } else {
+            return 0
+        }
+        
     }
     
     
@@ -126,6 +132,9 @@ let calc = Calculator()
 //: Keep in mind that writing new tests may reveal ambiguity in the specification above--if that's the case, document the ambiguity, declare what you think *should* happen, and write the test to test for it.
 
 // ===== Your tests go here
+calc.add(lhs: -2, rhs: -4) == -6
+calc.multiply(lhs: -4, rhs: 6) == -24
+calc.avg([]) == 0
 
 //: ---
 //: ## Test code block
